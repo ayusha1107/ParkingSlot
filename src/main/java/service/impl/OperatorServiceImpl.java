@@ -4,7 +4,7 @@ import java.util.List;
 
 import main.java.model.Car;
 import main.java.model.CarParkingStatus;
-import main.java.model.ParkingStatus;
+import main.java.model.ParkingLotStatus;
 import main.java.service.OperatorService;
 import main.java.service.ParkingService;
 
@@ -33,7 +33,7 @@ public class OperatorServiceImpl implements OperatorService {
 			} catch (Exception e) {
 				throw new IllegalArgumentException("Unable to parse:" + capacitySizeStr + "as integer");
 			}
-			ParkingStatus parkingStatus = parkingService.createParking(capacitySize);
+			ParkingLotStatus parkingStatus = parkingService.createParking(capacitySize);
 			if (parkingStatus.getIsSuccess()) {
 				return "Created a parking lot with " + capacitySizeStr + " slots";
 			} else {

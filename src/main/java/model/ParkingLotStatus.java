@@ -1,6 +1,6 @@
 package main.java.model;
 
-public class ParkingStatus {
+public class ParkingLotStatus {
 
 	Boolean isSuccess;
 	String message;
@@ -21,7 +21,7 @@ public class ParkingStatus {
 		this.message = message;
 	}
 
-	public ParkingStatus(Boolean isSuccess, String message) {
+	public ParkingLotStatus(Boolean isSuccess, String message) {
 		super();
 		this.isSuccess = isSuccess;
 		this.message = message;

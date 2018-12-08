@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import main.java.model.Car;
 import main.java.model.CarParkingStatus;
 import main.java.model.ParkingLot;
-import main.java.model.ParkingStatus;
+import main.java.model.ParkingLotStatus;
 import main.java.service.ParkingService;
 
 public class ParkingServiceImpl implements ParkingService {
@@ -16,16 +16,15 @@ public class ParkingServiceImpl implements ParkingService {
 	List<Boolean> freeSlots;
 
 	@Override
-	public ParkingStatus createParking(Integer capacity) {
+	public ParkingLotStatus createParking(Integer capacity) {
 
-		ParkingStatus parkingStatus;
+		ParkingLotStatus parkingStatus;
 		if (parkingLot == null) {
 			parkingLot = new ParkingLot(capacity);
-			parkingStatus = new ParkingStatus(true, "Created a parking lot with " + capacity + " slots");
+			parkingStatus = new ParkingLotStatus(true, "Created a parking lot with " + capacity + " slots");
 			freeSlots = initializeFreeSlots(capacity);
-
 		} else {
-			parkingStatus = new ParkingStatus(false, "Parking lot already created");
+			parkingStatus = new ParkingLotStatus(false, "Parking lot already created");
 		}
 		return parkingStatus;
 	}

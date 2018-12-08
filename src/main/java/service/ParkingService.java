@@ -4,11 +4,11 @@ import java.util.List;
 
 import main.java.model.Car;
 import main.java.model.CarParkingStatus;
-import main.java.model.ParkingStatus;
+import main.java.model.ParkingLotStatus;
 
 public interface ParkingService {
 
-	public ParkingStatus createParking(Integer capacity);
+	public ParkingLotStatus createParking(Integer capacity);
 
 	public CarParkingStatus parkCar(Car car);
 
